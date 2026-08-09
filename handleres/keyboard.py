@@ -7,8 +7,11 @@ from aiogram.types import (
 
 menu = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="О боте")],
-        [KeyboardButton(text="Старт"), KeyboardButton(text="Помощь")],
+        [KeyboardButton(text="О боте", style="primary")],
+        [
+            KeyboardButton(text="Старт", style="success"),
+            KeyboardButton(text="Помощь", style="danger"),
+        ],
     ],
     resize_keyboard=True,
 )
@@ -16,8 +19,16 @@ menu = ReplyKeyboardMarkup(
 
 inline = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text="Открыть сайт", url="https://google.com")],
-        [InlineKeyboardButton(text="Подробнее", callback_data="info_more")],
+        [
+            InlineKeyboardButton(
+                text="Открыть сайт", style="primary", url="https://google.com"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Подробнее", style="success", callback_data="info_more"
+            )
+        ],
     ],
     resize_keyboard=True,
 )
@@ -28,11 +39,8 @@ inline_kb = InlineKeyboardMarkup(
         [InlineKeyboardButton(text="Оплатить подписку🌟", callback_data="subscribe")],
     ],
     resize_keyboard=True,
-
 )
 
 payment_kb = InlineKeyboardMarkup(
-    inline_keyboard =[
-        [InlineKeyboardButton(text="Оплатить🌟", pay=True)]
-    ]
+    inline_keyboard=[[InlineKeyboardButton(text="Оплатить🌟", pay=True)]]
 )
